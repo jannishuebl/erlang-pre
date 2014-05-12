@@ -2,6 +2,7 @@
  
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
+\usepackage{hyperref}
 
 
 \title{Erlang - Verteilte Systeme eine neue Erfindung?}
@@ -10,19 +11,28 @@
  
 \begin{document}
 \maketitle
+
+\mode<article>
+   \newpage
+\mode*
+
 \frame{\tableofcontents[currentsection]}
  
+\mode<article>
+   \newpage
+\mode*
+
 \section{Wie ich zu Erlang gefunden habe..}
 \subsection{Die Idee}
 \begin{frame} %%Eine Folie
   \frametitle{Die Idee} %%Folientitel
   \begin{itemize} %%Definition
-     \item Eine App schreiben. (Done)
-     \item Eine App schreiben deren Daten auf einem eigenen Server gespeichert werden. (In Progress)
-     \item Ein eigenes P2P-Netz bauen. (Planed) 
-     \item Einen Server schreiben der eine bilatarale Kommunikation zulässt. (In Progress)
-     \item Eigene Pushnachrichten verschicken ohne Google. (Done)
-     \item Die Lösung: RabbitMQ.
+     \item<1-> Eine App schreiben. (Done)
+     \item<2-> Eine App schreiben deren Daten auf einem eigenen Server gespeichert werden. (In Progress)
+     \item<3-> Ein eigenes P2P-Netz bauen. (Planed) 
+     \item<4-> Einen Server schreiben der eine bilatarale Kommunikation zulässt. (In Progress)
+     \item<5-> Eigene Pushnachrichten verschicken ohne Google. (Done)
+     \item<6-> Die Lösung: RabbitMQ.
   \end{itemize}
 \end{frame}
 
@@ -41,14 +51,16 @@
 
 \begin{frame} %%Eine Folie
   \frametitle{Was ist Erlang?} %%Folientitel
-  \begin{itemize} %%Definition
+  \pause
+  \begin{itemize}[<+->] %%Definition
     \item Programmiersprache
   \end{itemize}
 \end{frame}
 
 \begin{frame} %%Eine Folie
   \frametitle{Für was Erlang?} %%Folientitel
-  \begin{itemize} %%Definition
+  \pause
+  \begin{itemize}[<+->] %%Definition
     \item massively scalable
     \item soft real-time systems
     \item high availability
@@ -79,7 +91,9 @@
 \begin{frame} %%Eine Folie
   \frametitle{Verteilte Systeme} %%Folientitel
     Siehe 6. Semester bei Florian Sperber
-    \includegraphics[width=250px]{img/amdahl}
+    \begin{center}
+       \includegraphics[width=250px]{img/amdahl}
+    \end{center}
 \end{frame}
 
 \subsection{Fehlertoleranz}
@@ -121,9 +135,11 @@
 
 \begin{frame} %%Eine Folie
   \frametitle{Was Lernen wir daraus?} %%Folientitel
+  \begin{center}
      abstrahieren, abstrahieren, abstrahieren!!
      \newline
      - Erlang erlaubt es also benutzt es
+   \end{center}
 \end{frame}
 
 
@@ -194,6 +210,7 @@
   \frametitle{Literatur} %%Folientitel
   \begin{itemize} %%Definition
     \item Learn you some Erlang for Greate Good! - A Beginner's Guide
+    \item \url{http://learnyousomeerlang.com/}
   \end{itemize}
   \includegraphics[height=200px]{img/splash-book}
 \end{frame}

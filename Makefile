@@ -1,8 +1,5 @@
 
 
-install_env:
-	sudo apt-get install texlive
-	sudo apt-get install latex-beamer
 
 all:
 	make out/index.pdf
@@ -25,5 +22,9 @@ view:
 
 pres:
 	evince -s out/index.pdf
+
+install_env:
+	sudo apt-get install texlive
+	sudo apt-get install latex-beamer
 
 #ENDE
