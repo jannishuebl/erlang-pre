@@ -2,6 +2,7 @@
 \usetheme{Bergen}  %% Themenwahl
  
 \usepackage[utf8]{inputenc}
+\usepackage{graphicx}
 
 
 \title{Erlang - Verteilte Systeme eine neue Erfindung?}
@@ -25,10 +26,174 @@
   \end{itemize}
 \end{frame}
 
-
-\begin{frame} 
-  \frametitle{RabbitMQ}
+\begin{frame} %%Eine Folie
+  \frametitle{RabbitMQ} %%Folientitel
+  \begin{itemize} %%Definition
+    \item Messagebroker
+    \item Realiesierung eines Pushservice
+    \item Implementierung von AMQP 
+    \item Programmiersprache: Erlang
+  \end{itemize}
+  \includegraphics[width=250px]{img/example-routing}
 \end{frame}
 
-\end{document}
 
+\begin{frame} %%Eine Folie
+  \frametitle{Was ist Erlang?} %%Folientitel
+  \begin{itemize} %%Definition
+    \item Programmiersprache
+  \end{itemize}
+\end{frame}
+
+\begin{frame} %%Eine Folie
+  \frametitle{Für was Erlang?} %%Folientitel
+  \begin{itemize} %%Definition
+    \item massively scalable
+    \item soft real-time systems
+    \item high availability
+  \end{itemize}
+\end{frame}
+
+\section{Konzepte in Erlang}
+\begin{frame} %%Eine Folie
+  \frametitle{Konzepte in Erlang} %%Folientitel
+  \begin{itemize} %%Definition
+    \item Nebenläufigkeit (nicht Parallelisierung!!)
+    \item Verteilte Systeme
+    \item Fehlertoleranz
+  \end{itemize}
+\end{frame}
+
+\subsection{Nebenläufigkeit}
+\begin{frame} %%Eine Folie
+  \frametitle{Aktoren Model} %%Folientitel
+  \begin{itemize} %%Definition
+    \item Gefängnisinsassen in ihren Zellen
+    \item Kommunizieren ausschießlich über Briefe
+  \end{itemize}
+  \includegraphics[width=250px]{img/actoren}
+\end{frame}
+
+\subsection{Verteilte Systeme}
+\begin{frame} %%Eine Folie
+  \frametitle{Verteilte Systeme} %%Folientitel
+    Siehe 6. Semester bei Florian Sperber
+    \includegraphics[width=250px]{img/amdahl}
+\end{frame}
+
+\subsection{Fehlertoleranz}
+\begin{frame} %%Eine Folie
+  \frametitle{Fehlertoleranz} %%Folientitel
+  \begin{itemize} %%Definition
+    \item Let it crash!!
+    \item Durch Aktoren stützen nur einzelne Teile ab.
+    \item Andere Programmteile sollen den Fehler abhandeln.
+  \end{itemize}
+\end{frame}
+
+\section{Development enviroment}
+\begin{frame} %%Eine Folie
+  \frametitle{Development enviroment} %%Folientitel
+  \begin{itemize} %%Definition
+    \item Eigene VM (Unterstützung für JVM)
+    \item Development tools (compiler, debugger, profiler, test framework)
+    \item Open Telecom Platform (OTP) Framework
+    \item Web server
+    \item Parser Generator
+    \item Mnesia Datenbank
+    \item Hot code loading
+  \end{itemize}
+\end{frame}
+
+\subsection{Open Telecom Platform (OTP) Framework}
+\begin{frame} %%Eine Folie
+  \frametitle{Open Telecom Platform (OTP) Framework} %%Folientitel
+  \begin{Definition}
+    Sammlung von Designpattern (Funktional!!)
+  \end{Definition}
+  \begin{itemize} %%Definition
+    \item FSM (Entlicher Automat)
+    \item Server (Clients sind andere Prozesse)
+    \item Supervisor (Beobachten, Kontrollieren andere Prozesse)
+  \end{itemize}
+\end{frame}
+
+\begin{frame} %%Eine Folie
+  \frametitle{Was Lernen wir daraus?} %%Folientitel
+     abstrahieren, abstrahieren, abstrahieren!!
+     \newline
+     - Erlang erlaubt es also benutzt es
+\end{frame}
+
+
+\subsection{Mnesia}
+\begin{frame} %%Eine Folie
+  \frametitle{Mnesia} %%Folientitel
+  \begin{Definition}
+    In Memory Database
+  \end{Definition}
+  \begin{itemize} %%Definition
+    \item Wird über alle Erlangnodes synchronisiert
+    \item Erlaubt Zugriff auf selbe Daten von verschiedenen Aktoren
+    \item Recht kompliziert
+  \end{itemize}
+\end{frame}
+
+\subsection{Hot code loading}
+\begin{frame} %%Eine Folie
+  \frametitle{Hot code loading} %%Folientitel
+  \begin{Definition}
+    Programmcode während des Betriebs ändern
+  \end{Definition}
+  \begin{itemize} %%Definition
+    \item VM kann zwei Codeversionen aufnehmen
+    \item Neuer Aufrufe des Codeteils -> Neuer Code wird geladen
+    \item Probleme:
+      \begin{itemize}
+        \item Prozess steht still.
+        \item "Objekte" müssen geändert werden.
+      \end{itemize}
+    \item Lösungen:
+      \begin{itemize}
+        \item Let it fail.
+        \item Methoden um Programmstatus zu ändern.
+      \end{itemize}
+  \end{itemize}
+\end{frame}
+
+\begin{frame} %%Eine Folie
+  \frametitle{Was lernen wir daraus?} %%Folientitel
+  Mach es nicht wenn du es nich umbedingt brauchst!!
+\end{frame}
+
+\section{Was ist den nun Erlang?}
+\begin{frame} %%Eine Folie
+  \frametitle{Was ist den nun Erlang?} %%Folientitel
+  \begin{itemize} %%Definition
+    \item Erlang bietet die Möglichkeit kranken Scheiss zu machen.
+    \item Erlang ist keine Patentlösung für alles.
+    \item Erlang ist keine Patentlösung für verteilte Systeme.
+    \item Erlang ist keine Patentlösung für Nebenläufigkeit.
+    \item Erlang bietet die Möglichkeiten dazu.
+  \end{itemize}
+\end{frame}
+
+\section{Erlang History}
+\begin{frame} %%Eine Folie
+  \frametitle{Was ist den nun Erlang?} %%Folientitel
+  \begin{itemize} %%Definition
+    \item Kommt aus der Telekomunikationsbranche (Ericsson)
+    \item Erste Implementierung in Prolog
+    \item Von ca. 1990 (fyi: ~24 Jahre)
+  \end{itemize}
+\end{frame}
+
+\section{Literatur}
+\begin{frame} %%Eine Folie
+  \frametitle{Literatur} %%Folientitel
+  \begin{itemize} %%Definition
+    \item Learn you some Erlang for Greate Good! - A Beginner's Guide
+  \end{itemize}
+  \includegraphics[height=200px]{img/splash-book}
+\end{frame}
+\end{document}
