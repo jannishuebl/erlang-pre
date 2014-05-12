@@ -1,4 +1,9 @@
 
+
+install_env:
+	sudo apt-get install texlive
+	sudo apt-get install latex-beamer
+
 all:
 	make out/index.pdf
 	make out/handout_raw.pdf
