@@ -2,16 +2,27 @@
 
 
 all:
-	make out/index.pdf
-	make out/handout_raw.pdf
-	make out/handout.pdf
-	make out/article.pdf
+	@make --no-print-directory out/index.pdf
+	@make --no-print-directory out/handout_raw.pdf
+	@make --no-print-directory out/handout.pdf
+	@make --no-print-directory out/article.pdf
 	
 
 out/%.pdf: %.tex content.tex
 	pdflatex -output-directory=out $<
 	pdflatex -output-directory=out $<
 	pdflatex -output-directory=out $<
+
+index:
+	@make --no-print-directory out/index.pdf
+
+handout:
+	@make --no-print-directory out/handout_raw.pdf
+	@make --no-print-directory out/handout.pdf
+
+article:
+	@make --no-print-directory out/article.pdf
+
 
 clean:
 	rm -r -f out
